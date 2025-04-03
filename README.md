@@ -41,7 +41,7 @@ EazyYT is a simple graphical application designed to easily download YouTube vid
 
 ## pt-BR
 
-EazyYT é uma aplicação gráfica simples criada para facilitar o download de vídeos do YouTube ou a extração do áudio desses vídeos. Desenvolvido com [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) para uma interface moderna com tema escuro e [yt_dlp](https://github.com/yt-dlp/yt-dlp) para o download, o EazyYT permite escolher entre baixar vídeos em formato MP4 ou extrair áudio em MP3. Ele também possui suporte para playlists, perguntando se deseja baixar a playlist completa ou apenas um vídeo individual.
+EazyYT é uma aplicação gráfica simples criada para facilitar o download de vídeos do YouTube ou a extração do áudio desses vídeos. Desenvolvido com [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) para uma interface moderna e [yt_dlp](https://github.com/yt-dlp/yt-dlp) para o download, o EazyYT permite escolher entre baixar vídeos em formato MP4 ou extrair áudio em MP3. Ele também possui suporte para playlists, perguntando se deseja baixar a playlist completa ou apenas um vídeo individual.
 
 ### Funcionalidades
 - **Interface Moderna:** Interface gráfica construída com CustomTkinter com aparência escura.
