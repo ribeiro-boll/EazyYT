@@ -24,8 +24,7 @@ EazyYT is a simple graphical application designed to easily download YouTube vid
 
 ### Installation
 1. Clone the repository from GitHub.
-2. Install the required packages listed in the `requirements.txt` file.
-3. (Optional) To generate a Windows executable (.exe) from Linux, you can simulate a Windows environment using Wine. Install Wine, download the Windows installer for Python, install it under Wine, install PyInstaller in the Wine environment, and then compile the executable. The generated file will be located in the distribution folder.
+2. Install the required packages listed in requirements section
 
 ### Usage
 - **Run the Application:** Simply run the script with Python, or if your os is windows, you run the exe.
@@ -57,8 +56,7 @@ EazyYT é uma aplicação gráfica simples criada para facilitar o download de v
 
 ### Instalação
 1. Clone o repositório do GitHub.
-2. Instale os pacotes necessários conforme indicado no arquivo `requirements.txt`.
-3. (Opcional) Para gerar um executável para Windows (.exe) a partir do Linux, você pode utilizar o Wine para simular um ambiente Windows. Instale o Wine, obtenha o instalador do Python para Windows, instale-o via Wine, instale o PyInstaller no ambiente Wine e compile o executável. O arquivo gerado estará na pasta de distribuição.
+2. Instale os pacotes necessários conforme indicado na parte de requisitos
 
 ### Uso
 - **Execute a Aplicação:** Rode o script utilizando o Python, ou caso seu sistema seja windows, rode o exe.
