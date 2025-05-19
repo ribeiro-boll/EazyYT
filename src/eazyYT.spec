@@ -1,37 +1,53 @@
-# -*- mode: python ; coding: utf-8 -*-
+import sys
+from PyInstaller.utils.hooks import collect_submodules
 
+# Inclua o diretório do projeto
+pathex = [r'.']
 
+# Análise do script
 a = Analysis(
     ['eazyYT.py'],
-    pathex=[],
+    pathex=pathex,
     binaries=[],
     datas=[],
     hiddenimports=[],
     hookspath=[],
     runtime_hooks=[],
     excludes=[],
+    win_no_prefer_redirects=False,
+    win_private_assemblies=False,
+    cipher=None,
     noarchive=False,
-    optimize=0,
 )
-pyz = PYZ(a.pure)
 
+# Compacta o código puro
+pyz = PYZ(
+    a.pure,
+    a.zipped_data,
+    cipher=None
+)
+
+# Cria o executável (onefile sem coleta separada)
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
-    a.datas,
     [],
+    exclude_binaries=True,
     name='eazyYT',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    upx_exclude=[],
-    runtime_tmpdir=None,
-    console=True,
-    disable_windowed_traceback=False,
-    argv_emulation=False,
-    target_arch=None,
-    codesign_identity=None,
-    entitlements_file=None,
+    console=True
+)
+
+# Coleta os binários, zipfiles e dados
+coll = COLLECT(
+    exe,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
+    strip=False,
+    upx=True,
+    name='eazyYT'
 )
