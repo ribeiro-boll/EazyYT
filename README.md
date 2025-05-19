@@ -67,3 +67,6 @@ EazyYT é uma aplicação gráfica simples criada para facilitar o download de v
   4. Se o link pertencer a uma playlist, uma janela pop-up perguntará se você deseja baixar a playlist completa ou apenas o vídeo individual.  
   5. Após o download ser concluído, uma janela de confirmação será exibida.  
   6. Verifique as pastas correspondentes (`mp4` ou `mp3`) no diretório principal para encontrar o arquivo baixado.
+
+
+:)
