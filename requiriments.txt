@@ -1,2 +1,0 @@
-yt-dlp==2025.4.30
-customtkinter==5.2.2
