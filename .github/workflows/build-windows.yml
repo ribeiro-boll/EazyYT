@@ -19,14 +19,12 @@ jobs:
       - name: Package EazyYT with PyInstaller
         uses: JackMcKew/pyinstaller-action-windows@v0.1.2
         with:
-          # Diretório contendo seu script ou .spec
-          path: .
-          # Se você tiver um requirements.txt na raiz, instala as deps
-          requirements: requirements.txt
+          path: src
+          requirements: src/requirements.txt
 
       # 3. Fazer upload do .exe gerado
       - name: Upload Windows Executable
         uses: actions/upload-artifact@v4
         with:
           name: EazyYT-windows
-          path: dist/windows
+          path: src/dist/windows
