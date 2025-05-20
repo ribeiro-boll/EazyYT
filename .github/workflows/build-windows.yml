@@ -31,11 +31,10 @@ jobs:
           path: src                            # aponta para pasta com eazyYT.py  
           requirements: src/requirements.txt  # instala yt-dlp e customtkinter  
           args: >                             # flags extras para o PyInstaller
+            --onefile
             --add-binary "src/ffmpeg/ffmpeg.exe;."
-            --hidden-import yt_dlp
             --hidden-import customtkinter
-            --hidden-import yt_dlp.compat._legacy
-            --hidden-import yt_dlp.utils._deprecated
+            --additional-hooks-dir hooks
         # PyInstaller Windows via Wine :contentReference[oaicite:1]{index=1}
 
       # 4. Faz upload do .exe gerado como artefato
