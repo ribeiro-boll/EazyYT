@@ -35,6 +35,7 @@ jobs:
             --hidden-import yt_dlp
             --hidden-import customtkinter
             --hidden-import yt_dlp.compat._legacy
+            --hidden-import yt_dlp.utils._deprecated
         # PyInstaller Windows via Wine :contentReference[oaicite:1]{index=1}
 
       # 4. Faz upload do .exe gerado como artefato
