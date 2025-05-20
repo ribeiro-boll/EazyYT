@@ -11,8 +11,8 @@ ffmpeg_src = os.path.abspath(os.path.join('ffmpeg', 'ffmpeg.exe'))
 
 a = Analysis(
     ['eazyYT.py'],
-    pathex=pathex,
-    binaries=[ (ffmpeg_src, '.') ],
+    pathex=['.'],
+    binaries=[('ffmpeg/ffmpeg.exe', '.')],
     datas=collect_data_files('customtkinter', subdir='assets'),
     hiddenimports=['yt_dlp', 'customtkinter'],
     hookspath=[],
