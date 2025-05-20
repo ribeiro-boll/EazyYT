@@ -11,21 +11,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Fazer checkout do código
+      # 1. Checkout do código
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Empacotar com PyInstaller via Wine
+      # 2. Baixa o FFmpeg Windows build (estático)
+      - name: Download FFmpeg Windows build
+        run: |
+          wget -qO ffmpeg.zip https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip  
+          unzip -q ffmpeg.zip -d ffmpeg_temp  
+          mkdir -p src/ffmpeg  
+          mv ffmpeg_temp/*/bin/ffmpeg.exe src/ffmpeg/ffmpeg.exe  
+        # Builds Windows static em gyan.dev :contentReference[oaicite:0]{index=0}
+
+      # 3. Empacota com PyInstaller via Wine, incluindo customtkinter e ffmpeg
       - name: Package EazyYT with PyInstaller
         uses: JackMcKew/pyinstaller-action-windows@v0.1.2
         with:
-          path: src
-          requirements: src/requirements.txt
-          
+          path: src                            # aponta para pasta com eazyYT.py  
+          requirements: src/requirements.txt  # instala yt-dlp e customtkinter  
+          args: >                             # flags extras para o PyInstaller
+            --add-binary "src/ffmpeg/ffmpeg.exe;."  
+            --hidden-import yt_dlp  
+            --hidden-import customtkinter  
+        # PyInstaller Windows via Wine :contentReference[oaicite:1]{index=1}
 
-      # 3. Fazer upload do .exe gerado
+      # 4. Faz upload do .exe gerado como artefato
       - name: Upload Windows Executable
         uses: actions/upload-artifact@v4
         with:
           name: EazyYT-windows
-          path: src/dist/windows
+          path: src/dist/windows             # pasta onde está o .exe  
+        # Upload de artefatos na Actions :contentReference[oaicite:2]{index=2}
