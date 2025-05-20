@@ -20,7 +20,9 @@ jobs:
         uses: JackMcKew/pyinstaller-action-windows@v0.1.2
         with:
           path: src
+          spec: src/eazyYT.spec
           requirements: src/requirements.txt
+          
 
       # 3. Fazer upload do .exe gerado
       - name: Upload Windows Executable
