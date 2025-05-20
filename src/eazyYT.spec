@@ -7,7 +7,7 @@ from PyInstaller.utils.hooks import collect_data_files
 pathex = [r'.']
 
 # Localização do ffmpeg.exe dentro do repositório
-ffmpeg_src = os.path.abspath(os.path.join('src', 'ffmpeg', 'ffmpeg.exe'))
+ffmpeg_src = os.path.abspath(os.path.join('ffmpeg', 'ffmpeg.exe'))
 
 a = Analysis(
     ['eazyYT.py'],
