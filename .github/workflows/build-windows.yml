@@ -31,6 +31,7 @@ jobs:
           path: src                            # aponta para pasta com eazyYT.py  
           requirements: src/requirements.txt  # instala yt-dlp e customtkinter  
           args: >                             # flags extras para o PyInstaller
+            --onefile
             --add-binary "src/ffmpeg/ffmpeg.exe;."  
             --hidden-import yt_dlp  
             --hidden-import customtkinter  
