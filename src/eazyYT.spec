@@ -1,16 +1,20 @@
-import sys
-from PyInstaller.utils.hooks import collect_submodules
+# -*- mode: python ; coding: utf-8 -*-
 
-# Inclua o diretório do projeto
+import os
+import sys
+from PyInstaller.utils.hooks import collect_data_files
+
 pathex = [r'.']
 
-# Análise do script
+# Localização do ffmpeg.exe dentro do repositório
+ffmpeg_src = os.path.abspath(os.path.join('src', 'ffmpeg', 'ffmpeg.exe'))
+
 a = Analysis(
     ['eazyYT.py'],
     pathex=pathex,
-    binaries=[],
-    datas=[],
-    hiddenimports=[],
+    binaries=[ (ffmpeg_src, '.') ],
+    datas=collect_data_files('customtkinter', subdir='assets'),
+    hiddenimports=['yt_dlp', 'customtkinter'],
     hookspath=[],
     runtime_hooks=[],
     excludes=[],
@@ -20,14 +24,12 @@ a = Analysis(
     noarchive=False,
 )
 
-# Compacta o código puro
 pyz = PYZ(
     a.pure,
     a.zipped_data,
     cipher=None
 )
 
-# Cria o executável (onefile sem coleta separada)
 exe = EXE(
     pyz,
     a.scripts,
@@ -41,7 +43,6 @@ exe = EXE(
     console=True
 )
 
-# Coleta os binários, zipfiles e dados
 coll = COLLECT(
     exe,
     a.binaries,
